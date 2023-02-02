@@ -13,6 +13,9 @@
 
 - Амжилт. Follow your dreams <3
 
+- Learn with together
+
+
 
 
 
