@@ -12,8 +12,6 @@ import earthpy.spatial as es
 import earthpy.plot as ep
 from shapely.geometry import mapping
 
-
-
 data = "/Users/munkhchuulgaenkhbayar/Documents"
 
 # Ландсатын зураг байгаа замыг зааж өгнө.
@@ -39,9 +37,11 @@ print('allLandsatBands', all_landsat_post_bands)
 all_landsat_post_bands.sort()
 all_landsat_post_bands
 
+
 def open_clean_band(band_path):
 
     return rxr.open_rasterio(band_path, masked=True).squeeze()
+
 
 landsat_post_xr = open_clean_band(all_landsat_post_bands[0])
 
@@ -120,6 +120,7 @@ def open_clean_band(band_path, clip_extent, valid_range=None):
 
     return cleaned_band
 
+
 cleaned_band = open_clean_band(all_landsat_post_bands[0], fire_boundary_utm48)
 
 f, ax = plt.subplots()
@@ -197,6 +198,7 @@ def process_bands(paths, crop_layer, stack=False):
     else:
         print("Returning a list of xarray objects.")
         return all_bands
+
 
 # Open up boundary extent using GeoPandas
 fire_boundary_path = os.path.join(shape_path + "/",
